@@ -1,0 +1,26 @@
+Tools Used in the Project
+
+Programming Language
+	•	Python 3.10+
+
+Libraries & Frameworks
+	•	FastAPI → REST API framework
+	•	SentenceTransformers → Embedding generation
+	•	FAISS → Vector similarity search
+	•	Transformers (HuggingFace) → FLAN-T5 LLM
+	•	SQLAlchemy → ORM for SQLite
+	•	python-docx → Read DOCX documents
+	•	PyPDF → Read PDF files
+	•	python-multipart → Handle file uploads
+
+Database
+	•	SQLite (local file: rag.db)
+
+Vector Store
+	•	FAISS (local index: faiss.index)
+
+Version Control
+	•	Git + GitHub
+
+IDE
+	•	Visual Studio Code
