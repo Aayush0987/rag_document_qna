@@ -6,7 +6,7 @@ router = APIRouter()
 def test_route():
     return {"message": "Router working!"}
 
-
+from services.summarize_service import summarize_document
 from fastapi import APIRouter, UploadFile, File, Depends
 from sqlalchemy.orm import Session
 from db.database import get_db
@@ -53,3 +53,6 @@ def delete_by_document(document_id: int, db: Session = Depends(get_db)):
     deleted_count = delete_conversations_by_document(db, document_id)
     return {"message": f"Deleted {deleted_count} conversations."}
 
+@router.get("/summarize")
+def summarize(document_id: int, db: Session = Depends(get_db)):
+    return summarize_document(document_id, db)
