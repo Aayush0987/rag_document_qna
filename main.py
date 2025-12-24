@@ -2,12 +2,12 @@ from fastapi import FastAPI
 from db.database import Base, engine
 from api.routes import router
 
-app = FastAPI()
-
-# Create tables
+# Create DB tables
 Base.metadata.create_all(bind=engine)
 
-# Include routes (empty for now)
+app = FastAPI()
+
+# Include router
 app.include_router(router)
 
 @app.get("/")
