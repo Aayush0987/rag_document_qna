@@ -22,3 +22,10 @@ def upload_document(file: UploadFile = File(...), db: Session = Depends(get_db))
         "document_id": result["document_id"],
         "chunks_created": result["total_chunks"]
     }
+
+from services.rag_service import rag_query
+
+@router.post("/ask")
+def ask_question(document_id: int, question: str, db: Session = Depends(get_db)):
+    result = rag_query(document_id, question, db)
+    return result

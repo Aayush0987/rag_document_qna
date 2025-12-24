@@ -9,3 +9,5 @@ python-docx
 sqlalchemy
 databases
 python-multipart
+transformers
+accelerate
